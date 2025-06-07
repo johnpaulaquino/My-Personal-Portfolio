@@ -1,0 +1,80 @@
+
+.sticky_wrapper {
+max-width: 1500px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin: 0 auto;
+  background-color: var(--bg-color);
+}
+
+.nav_container { 
+    margin: 30px 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--surface-color);
+  border-radius: 15px;
+  font-family: inherit;
+}
+
+.nav_container li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.nav_container__logo {
+  margin: 0 30px;
+  cursor: pointer;
+  color: var(--text-color); /* Added for consistency */
+}
+
+.nav_container__links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 30px;
+}
+
+.nav_container__links ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  gap: 50px; /* Better than individual margins */
+}
+
+.nav_container__links ul > li > a {
+  list-style: none;
+  text-decoration: none;
+  color: var(--muted-text-color);
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.nav_container__links ul > li > a:hover {
+  color: var(--accent-color);
+}
+
+.nav_container__button {
+  margin: 0 30px;
+  width: 240px;
+  height: 50px;
+}
+
+.nav_container__button button {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: var(--surface-color);
+  font-size: 1.3rem;
+  background-color: var(--accent-color); 
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.nav_container__button button:hover {
+  background-color: var(--surface-color); 
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+}
