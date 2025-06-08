@@ -1,3 +1,6 @@
+@import 'tailwindcss';
+
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -25,5 +28,9 @@
   box-sizing: border-box;
   scroll-snap-type: none;
   overflow: auto;
-  scrollbar-width: none
+  scrollbar-width: none;
+  font-size: 1.2rem;
+}
+html{
+  scroll-behavior: smooth;
 }
