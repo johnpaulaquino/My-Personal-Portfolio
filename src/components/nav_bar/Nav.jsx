@@ -1,10 +1,8 @@
 import react, { useState } from 'react';
-
-import useSmoothScroll from '../../utils/useSmoothScroller';
+import { Link } from 'react-scroll';
 
 const NavBar = () => {
-  useSmoothScroll()
-  const [activeLink, SetActiveLink] = useState('home');
+  
   return (
     <header className="sticky top-0 z-[100] max-w-[1500px] mx-auto backdrop-blur-[3px]">
       <div className='flex items-center justify-between mx-[90px] my-[50px] 
@@ -15,7 +13,7 @@ const NavBar = () => {
           </h1>
 
           <ul className='flex gap-10 text-[#B0B0B0]'>
-            <li className='hover:text-[#f8b600f5] transition-all duration-[0.5s]'><a href="#home">Home</a></li>
+            <li className='hover:text-[#f8b600f5] transition-all duration-[0.5s]'><Link className='cursor-pointer' to='hero' duration={100}>Home</Link></li>
             <li className='hover:text-[#f8b600f5] transition-all duration-[0.5s]'><a href="#about">About Me</a></li>
             <li className='hover:text-[#f8b600f5] transition-all duration-[0.5s]'><a href="#projects">Projects</a></li>
             <li className='hover:text-[#f8b600f5] transition-all duration-[0.5s]' ><a href="#certificates">Certificates</a></li>

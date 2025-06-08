@@ -11,7 +11,7 @@ const App = () => {
     <>
     <NavBar />
     
-  <section id='home'>
+  <section id='hero'>
       <Hero />
     </section>
     
