@@ -5,7 +5,7 @@ const NavBar = () => {
   
   return (
     <header className="sticky top-0 z-[100] max-w-[1500px] mx-auto backdrop-blur-[3px]">
-      <div className='flex items-center justify-between mx-[90px] my-[50px] 
+      <div className='flex items-center justify-between mx-[90px] my-[30px] 
       bg-[#2E2E2E] p-[15px] rounded-[10px]'>
 
           <h1 className='text-[2.5rem]'>

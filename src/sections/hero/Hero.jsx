@@ -4,7 +4,7 @@ const Hero = () =>{
 
     return (
         <>
-        <div className='h-[calc(100vh-80px)]  max-w-[1500px] mx-auto'>
+        <div className='max-w-[1500px] mx-auto '>
                <section className= ' mx-[90px] h-full flex' >
 
                     <div className='flex flex-col mt-[50px]'>
@@ -13,12 +13,13 @@ const Hero = () =>{
                          border-[#2e2e2e] border-2 bg-[#2e2e2e42] w-[250px] 
                          h-fit p-[15px] rounded-full flex-wrap'>
 
-                             <div className='w-[15px] h-[15px] bg-[#3EBE5E] absolute rounded-full left-4'></div>
+                             <div className='w-[15px] h-[15px] bg-[#3EBE5E] absolute rounded-full left-4 animate-ping'></div>
+                             <div className='w-[15px] h-[15px] bg-[#3EBE5E] absolute rounded-full left-4 '></div>
                               <p className="text-[1rem]">Available for Work</p>
                          </div>
 
                            <section className=' my-[30px]'>
-                         <h1 className="text-[5rem] leading-[100px] font-[700]">I'm John Paul Aquino<span className='text-[#F8B500]'>.</span></h1>
+                         <h1 className="text-[5rem] leading-[100px] font-[700]">John Paul Aquino<span className='text-[#F8B500]'>.</span></h1>
                          <br />
                          <h1 className="text-[5rem] leading-[100px] font-[700]">I Code 
 
@@ -54,8 +55,6 @@ const Hero = () =>{
                 </section>
 
                 {/* Left content */}
-                   
-              
             </section>
             
         </div>
