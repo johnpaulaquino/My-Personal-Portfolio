@@ -3,7 +3,6 @@ import ProfilePic from '../../assets/2x2 Picure.jpg'
 const Hero = () =>{
 
     return (
-        <>
         <div className='max-w-[1500px] mx-auto '>
                <section className= ' mx-[90px] h-full flex' >
 
@@ -39,27 +38,25 @@ const Hero = () =>{
                               bg-[#F8B500] rounded-[5px] hover:bg-[#0E0E0E] hover:text-[#EAEAEA] transition-all duration-[0.7s]'>
                                  Download CV
                              </button>
-                             <button className='w-[170px] h-full cursor-pointer  bg-[#2E2E2E] rounded-[5px]
-                              hover:bg-[#0E0E0E] hover:border-[#2E2E2E] hover:border-2  transition-all duration-[0.7s]'>
+                             <button className='w-[170px] h-full cursor-pointer  border-[#2E2E2E]  bg-[#2E2E2E] rounded-[5px] border-2
+                              hover:bg-[#0E0E0E]  transition-all duration-[0.7s]'>
                                  Browse Projects
                             </button>
                          </div>
                     </section>
                     </div>
+
+                     {/* Left content */}
                      <section className=''>
-                    <div className='mt-[150px] w-[400px] h-[400px] bg-center bg-cover object-fill rounded-full shadow-[0_4px_20px_rgba(255,255,255,0.3)]
-                    ' style={{backgroundImage : `url(${ProfilePic})`}}>
-                </div>
+                        <div className='mt-[150px] w-[400px] h-[400px] bg-center bg-cover object-fill rounded-full shadow-[0_4px_20px_rgba(255,255,255,0.3)]
+                        ' style={{backgroundImage : `url(${ProfilePic})`}}>
+                        </div>
 
+                    </section>
 
-                </section>
-
-                {/* Left content */}
             </section>
             
         </div>
-        
-        </>
     )
 };
 

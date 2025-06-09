@@ -3,8 +3,8 @@ import { Link } from 'react-scroll';
 
 const NavBar = () => {
   
-  return (
-    <header className="sticky top-0 z-[100] max-w-[1500px] mx-auto backdrop-blur-[3px]">
+  return (  
+    <header className="sticky top-0 z-[100] max-w-[1500px] mx-auto backdrop-blur-[3px] scroll-pb-[1200px]">
       <div className='flex items-center justify-between mx-[90px] my-[30px] 
       bg-[#2E2E2E] p-[15px] rounded-[10px]'>
 
@@ -15,7 +15,7 @@ const NavBar = () => {
           <ul className='flex gap-10 text-[#B0B0B0]'>
             <li className='hover:text-[#f8b600f5] transition-all duration-[0.5s]'><Link className='cursor-pointer' to='hero' duration={100}>Home</Link></li>
             <li className='hover:text-[#f8b600f5] transition-all duration-[0.5s]'><a href="#about">About Me</a></li>
-            <li className='hover:text-[#f8b600f5] transition-all duration-[0.5s]'><a href="#projects">Projects</a></li>
+            <li className='hover:text-[#f8b600f5] transition-all duration-[0.5s]'><a href="#selected_projects">Projects</a></li>
             <li className='hover:text-[#f8b600f5] transition-all duration-[0.5s]' ><a href="#certificates">Certificates</a></li>
           </ul>
 
