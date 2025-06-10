@@ -51,7 +51,7 @@ const FeaturedProjects = () =>{
         type: 'project',
         image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop',
         title: 'StudyBuddy - AI Learning Assistant',
-        description: 'AI-powered study companion that creates personalized learning paths and practice quizzes.',
+        description: 'AI-powered study companion that creates personalized learning paths and practice quizzes. ',
         technologies: ['Next.js', 'OpenAI API', 'Supabase', 'Tailwind'],
         status: 'Beta',
         stars: 312,
