@@ -27,6 +27,9 @@ const NavBar = () => {
           <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
             <a href="#certificates">Certificates</a>
           </li>
+          <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
+            <a href="#certificates">Contacts</a>
+          </li>
         </ul>
 
         <div

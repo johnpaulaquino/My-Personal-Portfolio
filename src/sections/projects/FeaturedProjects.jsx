@@ -78,6 +78,15 @@ const FeaturedProjects = () => {
           {cardData.map((card, index) => (
             <Cards key={index} data={card} />
           ))}
+          <div className="w-full h-fit flex flex-col items-center justify-center my-[30px]">
+            <button
+              className="bg-[#f8b600f5] p-[20px] border-2 border-[#f8b600f5] 
+            px-[50px] rounded-[5px] text-[#0E0E0E] font-bold cursor-pointer 
+            hover:bg-[#0E0E0E] hover:text-[#EAEAEA] transition-all duration-[0.7s]"
+            >
+              Show more
+            </button>
+          </div>
         </section>
       </section>
     </div>

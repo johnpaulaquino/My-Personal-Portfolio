@@ -6,14 +6,13 @@ import { FaGithub } from 'react-icons/fa';
 const Cards = ({ data }) => {
   return (
     // Main card wrapper
-    <section
-      key={data.id} // Changed from 'element' to 'data'
+    <section // Changed from 'element' to 'data'
       className="flex flex-col w-[550px] min-w-[550px] h-fit bg-[#2e2e2e49] rounded-[15px] my-[30px] border-2 border-[#2E2E2E]"
     >
       {/* Image preview area */}
       <div className="relative flex items-center justify-center w-full h-[350px] overflow-hidden group cursor-pointer">
         <div
-          className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:blur-sm group-hover:scale-110"
+          className="absolute inset-0 bg-cover bg-center rounded-tr-[10px] rounded-tl-[10px] hover:rounded-tr-[10px] hover:rounded-tl-[10px]  transition duration-700 group-hover:blur-sm group-hover:scale-110"
           style={{
             backgroundImage: `url(${data.image})`, // Changed from 'element.image' to 'data.image'
           }}
@@ -23,9 +22,7 @@ const Cards = ({ data }) => {
           <span className="hidden group-hover:block">
             <TbExternalLink className="text-[4rem]" />
           </span>
-          <p className="hidden text-[2rem] font-bold group-hover:block">
-            View Live Code
-          </p>
+          <p className="hidden text-[2rem] font-bold group-hover:block">View Live Code</p>
         </div>
       </div>
 
@@ -64,9 +61,7 @@ const Cards = ({ data }) => {
         </div>
 
         <h1 className="my-[10px] text-[32px] font-bold">{data.title}</h1>
-        <h3 className="text-[24px] overflow-hidden break-words">
-          {data.description}
-        </h3>
+        <h3 className="text-[24px] overflow-hidden break-words">{data.description}</h3>
       </div>
 
       {/* Last Updated and GitHub Button */}
