@@ -1,4 +1,4 @@
-import { BiRightArrowAlt } from "react-icons/bi";
+import { BiRightArrowAlt } from 'react-icons/bi';
 //   projects = [
 //     {
 //         "title": "Task Manager App",
@@ -38,37 +38,42 @@ import { BiRightArrowAlt } from "react-icons/bi";
 //     }
 // ]
 
+const About = () => {
+  return (
+    <div className=" max-w-[1500px] mx-auto ">
+      <section className="mx-[90px] my-[50px]">
+        <h1 className="text-[#F8B500] text-[1.5rem] font-[600]">About Me</h1>
 
+        <section className="grid grid-cols-4 md:grid-cols-1 gap-10 mt-[25px]">
+          <div className="col-span-3 col-start-1">
+            <h1
+              className="text-justify text-[1.5rem] font-[600]
+                         first-letter:text-9xl first-letter:float-left"
+            >
+              Hello, I'm John Paul C. Aquino. I'm currently 3rd year student at
+              Laguna University, who are taking Bachelor Of Science in Computer
+              With Specialization in Data Science, a passionate developer with
+              an experience in building Desktop Application, Web Application,
+              API's and Machine Learning.
+            </h1>
+          </div>
 
-const About = () =>{
-  
-    return (
-        <div  className=" max-w-[1500px] mx-auto " >
-            <section className="mx-[90px] my-[50px]">
-                <h1 className='text-[#F8B500] text-[1.5rem] font-[600]'>About Me</h1>
-
-                <section className="grid grid-cols-4 md:grid-cols-1 gap-10 mt-[25px]">
-                    <div className="col-span-3 col-start-1">
-                        <h1 className="text-justify text-[1.5rem] font-[600]
-                         first-letter:text-9xl first-letter:float-left">
-                            Hello, I'm John Paul C. Aquino. I'm currently 3rd year   
-                            student at Laguna University, who are taking 
-                            Bachelor Of Science in Computer With Specialization in Data Science,
-                            a passionate developer with an experience in building 
-                            Desktop Application, Web Application, API's and Machine Learning. 
-                        </h1>
-                    </div>
-
-                    <section className=" flex flex-col items-center justify-end col-span-1 col-start-4 ">
-                        <button className="group flex justify-evenly items-center w-[220px] bg-[#2E2E2E] h-[50px] border-[#2E2E2E] border-2  transition-all duration-[0.7s]
-                        hover:bg-[#0E0E0E] cursor-pointer rounded-[5px]"> Read More 
-                        <span className=""><BiRightArrowAlt className="text-[30px] transition-all duration-[0.7s] group-hover:text-[#f8b600f5]"/></span></button>
-                    </section>
-                </section>
-            </section>
-           
-        </div>
-    )
+          <section className=" flex flex-col items-center justify-end col-span-1 col-start-4 ">
+            <button
+              className="group flex justify-evenly items-center w-[220px] bg-[#2E2E2E] h-[50px] border-[#2E2E2E] border-2  transition-all duration-[0.7s]
+                        hover:bg-[#0E0E0E] cursor-pointer rounded-[5px]"
+            >
+              {' '}
+              Read More
+              <span className="">
+                <BiRightArrowAlt className="text-[30px] transition-all duration-[0.7s] group-hover:text-[#f8b600f5]" />
+              </span>
+            </button>
+          </section>
+        </section>
+      </section>
+    </div>
+  );
 };
 
 export default About;
