@@ -41,17 +41,9 @@ const MyCertificates = () => {
       credentialId: 'MLMIT2024',
       credentialUrl: 'https://credentials.edx.org/verify/MLMIT2024',
     },
-    {
-      id: 5,
-      title: 'Responsive Web Design',
-      issuer: 'freeCodeCamp',
-      issueDate: '2021-11-05',
-      expirationDate: null,
-      credentialId: 'FCC-RWD-56789',
-      credentialUrl: 'https://freecodecamp.org/certification/username/responsive-web-design',
-    },
   ]);
   const [sectionTitle] = useState('My Certificates');
+  const totalData = getCertificate.length;
 
   if (getCertificate.length > 0)
     return (
@@ -63,15 +55,19 @@ const MyCertificates = () => {
               <CertificateCards key={element.id} data={element} />
             ))}
           </div>
-          <div className="w-full h-fit flex flex-col items-center justify-center my-[30px]">
-            <button
-              className="bg-[#f8b600f5] p-[20px] border-2 border-[#f8b600f5] 
-            px-[50px] rounded-[5px] text-[#0E0E0E] font-bold cursor-pointer 
-            hover:bg-[#0E0E0E] hover:text-[#EAEAEA] transition-all duration-[0.7s]"
-            >
-              Show more
-            </button>
-          </div>
+          {totalData <= 3 ? (
+            <></>
+          ) : (
+            <div className="w-full h-fit flex flex-col items-center justify-center my-[30px]">
+              <button
+                className="bg-[#f8b600f5] p-[20px] border-2 border-[#f8b600f5] 
+      px-[50px] rounded-[5px] text-[#0E0E0E] font-bold cursor-pointer 
+      hover:bg-[#0E0E0E] hover:text-[#EAEAEA] transition-all duration-[0.7s]"
+              >
+                Show more
+              </button>
+            </div>
+          )}
         </section>
       </div>
     );
