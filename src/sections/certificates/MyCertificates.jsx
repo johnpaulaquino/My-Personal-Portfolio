@@ -50,7 +50,7 @@ const MyCertificates = () => {
       <div className="max-w-[1500px] mx-auto">
         <section className="mx-[90px] my-[30px] h-auto">
           <h1 className="text-[#F8B500] text-[1.5rem]">{sectionTitle}</h1>
-          <div className="">
+          <div className="my-[30px]">
             {getCertificate.map((element) => (
               <CertificateCards key={element.id} data={element} />
             ))}
@@ -64,7 +64,7 @@ const MyCertificates = () => {
       px-[50px] rounded-[5px] text-[#0E0E0E] font-bold cursor-pointer 
       hover:bg-[#0E0E0E] hover:text-[#EAEAEA] transition-all duration-[0.7s]"
               >
-                Show more
+                View All
               </button>
             </div>
           )}

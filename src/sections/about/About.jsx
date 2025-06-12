@@ -50,11 +50,10 @@ const About = () => {
               className="text-justify text-[1.5rem] font-[600]
                          first-letter:text-9xl first-letter:float-left"
             >
-              Hello, I'm John Paul C. Aquino. I'm currently 3rd year student at
-              Laguna University, who are taking Bachelor Of Science in Computer
-              With Specialization in Data Science, a passionate developer with
-              an experience in building Desktop Application, Web Application,
-              API's and Machine Learning.
+              Hello, I'm John Paul C. Aquino. I'm currently 3rd year student at Laguna University,
+              who are taking Bachelor Of Science in Computer With Specialization in Data Science, a
+              passionate developer with an experience in building Desktop Application, Web
+              Application, API's and Machine Learning.
             </h1>
           </div>
 

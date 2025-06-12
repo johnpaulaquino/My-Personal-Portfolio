@@ -14,7 +14,7 @@ const NavBar = () => {
         </h1>
         <ul className="flex gap-10 text-[#B0B0B0]">
           <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
-            <Link className="cursor-pointer" to="hero" duration={100} >
+            <Link className="cursor-pointer" to="hero" duration={100}>
               Home
             </Link>
           </li>
@@ -28,7 +28,10 @@ const NavBar = () => {
             <a href="#certificates">Certificates</a>
           </li>
           <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
-            <a href="#certificates">Contacts</a>
+            <a href="#reviews">Reviews</a>
+          </li>
+          <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
+            <a href="#contact">Contact</a>
           </li>
         </ul>
 

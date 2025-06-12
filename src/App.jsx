@@ -3,10 +3,12 @@ import Hero from './sections/hero/Hero.jsx';
 import About from './sections/about/About.jsx';
 import FeaturedProjects from './sections/projects/FeaturedProjects.jsx';
 import MyCertificates from './sections/certificates/MyCertificates.jsx';
+import Reviews from './sections/reviews/Reviews.jsx';
+import TechStack from './sections/tech_stack/TechStack.jsx';
 
 const App = () => {
   return (
-    <>
+    <body>
       <NavBar />
 
       <section id="hero">
@@ -21,10 +23,18 @@ const App = () => {
         <FeaturedProjects />
       </section>
 
+      <section id="tech_stack">
+        <TechStack />
+      </section>
+
       <section id="certificates">
         <MyCertificates />
       </section>
-    </>
+
+      <section id="reviews">
+        <Reviews />
+      </section>
+    </body>
   );
 };
 

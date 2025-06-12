@@ -14,8 +14,8 @@ const CertificateCards = ({ data }) => {
               <p className="text-[32px] text-[#f8b600f5]">{data.issuer}</p>
             </div>
             <div className="mt-[90px] flex justify-between">
-              <p className="text-[18px] text-[#B0B0B0]">Issue Date: {data.issueDate}</p>
-              <p className="text-[18px] text-[#B0B0B0]">credential Id: {data.credentialId}</p>
+              <p className="text-[18px] text-[#B0B0B0]">Date Issued: {data.issueDate}</p>
+              <p className="text-[18px] text-[#B0B0B0]">Credential ID: {data.credentialId}</p>
             </div>
           </div>
         </div>
