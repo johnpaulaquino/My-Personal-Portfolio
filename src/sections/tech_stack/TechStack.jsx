@@ -16,7 +16,7 @@ const TechStack = () => {
       <section className="mx-[90px] p-[30px">
         <h1 className="text-[#F8B500] my-[30px] text-[1.5rem]">Tools I Work With</h1>
 
-        <div className="flex  gap-[30px] flex-wrap">
+        <div className="flex justify-center items-center  gap-[30px] flex-wrap">
           {Object.entries(icons[0].techStack).map(([categ, tools]) => (
             <div
               key={categ}

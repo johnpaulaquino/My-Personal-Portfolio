@@ -30,9 +30,6 @@ const NavBar = () => {
           <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
             <a href="#reviews">Reviews</a>
           </li>
-          <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
-            <a href="#contact">Contact</a>
-          </li>
         </ul>
 
         <div
@@ -47,7 +44,7 @@ const NavBar = () => {
           duration-[0.7s]"
           >
             <a
-              href="#contact"
+              href="#get_in_touch"
               className="
           "
             >

@@ -5,7 +5,7 @@ import FeaturedProjects from './sections/projects/FeaturedProjects.jsx';
 import MyCertificates from './sections/certificates/MyCertificates.jsx';
 import Reviews from './sections/reviews/Reviews.jsx';
 import TechStack from './sections/tech_stack/TechStack.jsx';
-
+import GetInTouch from './sections/get_in_touch/GetInTouch.jsx';
 const App = () => {
   return (
     <body>
@@ -33,6 +33,9 @@ const App = () => {
 
       <section id="reviews">
         <Reviews />
+      </section>
+      <section id="get_in_touch">
+        <GetInTouch />
       </section>
     </body>
   );
