@@ -71,25 +71,23 @@ const FeaturedProjects = () => {
   }
   //Return data not found components if no data retrieved.
   return (
-    <div className="mx-auto max-w-[1500px]">
-      <section className=" mx-[90px] ">
-        <h1 className="mt-[30px] text-[#F8B500] text-[1.5rem] font-[600]">{title}</h1>
-        <section className="flex flex-wrap justify-center gap-[50px] w-full transition-all duration-700">
-          {cardData.map((card, index) => (
-            <Cards key={index} data={card} />
-          ))}
-          <div className="w-full h-fit flex flex-col items-center justify-center">
-            <button
-              className="bg-[#f8b600f5] p-[20px] border-2 border-[#f8b600f5] 
+    <section className=" mx-[90px] ">
+      <h1 className="text-[#F8B500] text-[3rem] font-[600] my-[30px]">{title}</h1>
+      <section className="flex flex-wrap justify-center gap-[50px] w-full transition-all duration-700">
+        {cardData.map((card, index) => (
+          <Cards key={index} data={card} />
+        ))}
+        <div className="w-full h-fit flex flex-col items-center justify-center">
+          <button
+            className="bg-[#f8b600f5] p-[20px] border-2 border-[#f8b600f5] 
             px-[50px] rounded-[5px] text-[#0E0E0E] font-bold cursor-pointer 
             hover:bg-[#0E0E0E] hover:text-[#EAEAEA] transition-all duration-[0.7s]"
-            >
-              See All Works
-            </button>
-          </div>
-        </section>
+          >
+            See All Works
+          </button>
+        </div>
       </section>
-    </div>
+    </section>
   );
 };
 export default FeaturedProjects;

@@ -33,7 +33,6 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
 }
-
 .scrollbar-custom::-webkit-scrollbar {
   width: 6px;
   height: 6px;

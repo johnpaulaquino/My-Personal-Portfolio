@@ -47,29 +47,27 @@ const MyCertificates = () => {
 
   if (getCertificate.length > 0)
     return (
-      <div className="max-w-[1500px] mx-auto">
-        <section className="mx-[90px] my-[30px] h-auto">
-          <h1 className="text-[#F8B500] text-[1.5rem]">{sectionTitle}</h1>
-          <div className="my-[30px]">
-            {getCertificate.map((element) => (
-              <CertificateCards key={element.id} data={element} />
-            ))}
-          </div>
-          {totalData <= 3 ? (
-            <></>
-          ) : (
-            <div className="w-full h-fit flex flex-col items-center justify-center my-[30px]">
-              <button
-                className="bg-[#f8b600f5] p-[20px] border-2 border-[#f8b600f5] 
+      <section className="mx-[90px] my-[30px] h-auto">
+        <h1 className="text-[#F8B500] text-[3rem] font-[600] my-[30px]">{sectionTitle}</h1>
+        <div className="my-[30px]">
+          {getCertificate.map((element) => (
+            <CertificateCards key={element.id} data={element} />
+          ))}
+        </div>
+        {totalData <= 3 ? (
+          <></>
+        ) : (
+          <div className="w-full h-fit flex flex-col items-center justify-center my-[30px]">
+            <button
+              className="bg-[#f8b600f5] p-[20px] border-2 border-[#f8b600f5] 
       px-[50px] rounded-[5px] text-[#0E0E0E] font-bold cursor-pointer 
       hover:bg-[#0E0E0E] hover:text-[#EAEAEA] transition-all duration-[0.7s]"
-              >
-                View All
-              </button>
-            </div>
-          )}
-        </section>
-      </div>
+            >
+              View All
+            </button>
+          </div>
+        )}
+      </section>
     );
 
   return <DataNotFound title={sectionTitle} message={'No Certificates'} />;

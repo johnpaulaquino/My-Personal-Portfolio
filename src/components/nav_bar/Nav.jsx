@@ -1,6 +1,8 @@
-import { Link } from 'react-scroll';
+import { Link as ScrollLink, scroller } from 'react-scroll';
+import { Link as LinkRouter } from 'react-router-dom';
+import { useEffect } from 'react';
 
-const NavBar = () => {
+const NavBar = ({ links = [] }) => {
   return (
     <header className="sticky top-0 z-[100] max-w-[1500px] mx-auto backdrop-blur-[3px] scroll-pb-[1200px]">
       <div
@@ -8,50 +10,53 @@ const NavBar = () => {
       bg-[#2E2E2E] p-[15px] rounded-[10px]"
       >
         <h1 className="text-[2.5rem]">
-          <a href="#home" className="text-[#f8b600f5] ">
+          <LinkRouter to={'/'} className="text-[#f8b600f5] cursor-pointer">
             Pa<span className="text-[#EAEAEA]">ul</span>
-          </a>
+          </LinkRouter>
         </h1>
         <ul className="flex gap-10 text-[#B0B0B0]">
-          <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
-            <Link className="cursor-pointer" to="hero" duration={100}>
-              Home
-            </Link>
-          </li>
-          <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
-            <a href="#about">About Me</a>
-          </li>
-          <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
-            <a href="#selected_projects">Projects</a>
-          </li>
-          <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
-            <a href="#certificates">Certificates</a>
-          </li>
-          <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
-            <a href="#reviews">Reviews</a>
-          </li>
+          {links.map((element) => (
+            <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
+              <ScrollLink
+                className="cursor-pointer"
+                to={element.destination}
+                offset={-100}
+                smooth={'easeInQuad'}
+                duration={120}
+                spy={true}
+                activeClass="text-[#f8b600f5] font-bold transition-all duration-[0.7s]"
+              >
+                {element.destinationText}
+              </ScrollLink>
+            </li>
+          ))}
         </ul>
 
-        <div
-          className="flex items-center justify-center bg-[#f8b600f5] w-[150px] h-[55px]
-        rounded-[10px]"
+        <ScrollLink
+          to="getintouch"
+          offset={-100}
+          isDynamic={true}
+          className="cursor-pointer"
+          smooth={'easeInQuad'}
+          duration={120}
+          spy={true}
+          activeClass="text-[#f8b600f5] font-bold transition-all duration-[0.7s]"
         >
-          <button
-            className="w-full h-full cursor-pointer 
+          <div
+            className="flex items-center justify-center bg-[#f8b600f5] w-[150px] h-[55px]
+        rounded-[10px]"
+          >
+            <button
+              className="w-full h-full cursor-pointer 
           text-[#0E0E0E] text-[1.1rem] font-[500] border-[#f8b600f5] 
           border-[2px] rounded-[5px]
           hover:bg-[#2E2E2E] hover:text-[#EAEAEA] transition-all 
           duration-[0.7s]"
-          >
-            <a
-              href="#get_in_touch"
-              className="
-          "
             >
               Get in touch
-            </a>
-          </button>
-        </div>
+            </button>
+          </div>
+        </ScrollLink>
       </div>
     </header>
   );
