@@ -1,9 +1,10 @@
 import ProfilePic from '../../assets/2x2 Picure.jpg';
+import { Link as LinkRouter } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section className=" mx-[90px] h-full flex">
-      <div className="flex flex-col mt-[50px]">
+    <section className=" mx-[90px] h-full grid grid-cols-5">
+      <div className="col-span-3 start-0 end-3.5 flex-col mt-[50px] max-xl:col-span-full max-xl:justify-center ">
         <div
           className="flex items-center relative justify-center
                          border-[#2e2e2e] border-2 bg-[#2e2e2e42] w-[250px] 
@@ -40,18 +41,21 @@ const Hero = () => {
             >
               Download CV
             </button>
-            <button
-              className="w-[170px] h-full cursor-pointer  border-[#2E2E2E]  bg-[#2E2E2E] rounded-[5px] border-2
+
+            <LinkRouter to="projects">
+              <button
+                className="w-[170px] h-full cursor-pointer  border-[#2E2E2E]  bg-[#2E2E2E] rounded-[5px] border-2
                               hover:bg-[#0E0E0E]  transition-all duration-[0.7s]"
-            >
-              Browse Projects
-            </button>
+              >
+                Browse Projects
+              </button>
+            </LinkRouter>
           </div>
         </section>
       </div>
 
       {/* Left content */}
-      <section className="">
+      <section className="col-span-2 start-4  max-xl:hidden grid justify-end ">
         <div
           className="mt-[150px] w-[400px] h-[400px] bg-center bg-cover object-fill rounded-full shadow-[0_4px_20px_rgba(255,255,255,0.3)]
                         "

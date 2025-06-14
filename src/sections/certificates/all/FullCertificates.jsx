@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import CertificateCards from '../../components/cards/CertificateCard';
 import DataNotFound from '../../components/data_not_found/DataNotFound';
-import { Link as LinkRouter } from 'react-router-dom';
+import Pagination from '../../../components/pagination/Pagination';
 const MyCertificates = () => {
   // This data is for temporary and for testing only
   const [getCertificate, setCertificate] = useState([
@@ -54,28 +54,8 @@ const MyCertificates = () => {
           {getCertificate.map((element) => (
             <CertificateCards key={element.id} data={element} />
           ))}
+          <Pagination />
         </div>
-        {totalData <= 3 ? (
-          <></>
-        ) : (
-          <div className="w-full h-fit flex flex-col items-center justify-center my-[30px]">
-            <LinkRouter to={'/certificates/all'}>
-              <button
-                className="bg-[#f8b600f5] p-[20px] border-2 border-[#f8b600f5] 
-      px-[50px] rounded-[5px] text-[#0E0E0E] font-bold cursor-pointer 
-      hover:bg-[#0E0E0E] hover:text-[#EAEAEA] transition-all duration-[0.7s]"
-                onClick={() => {
-                  window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth',
-                  });
-                }}
-              >
-                View All
-              </button>
-            </LinkRouter>
-          </div>
-        )}
       </section>
     );
 

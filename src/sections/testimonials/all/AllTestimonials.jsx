@@ -1,8 +1,12 @@
 import { useState } from 'react';
-import ReviewsCard from '../../components/cards/ReviewsCard';
-import DataNotFound from '../../components/data_not_found/DataNotFound';
-const Reviews = () => {
+import Testimonials from '../Testimonials';
+import DataNotFound from '../../../components/data_not_found/DataNotFound';
+import { Link as LinkRouter } from 'react-router-dom';
+import ReviewsCard from '../../../components/cards/ReviewsCard';
+import Pagination from '../../../components/pagination/Pagination';
+const AllTestimonials = () => {
   const [title] = useState('Testimonials');
+
   const [data] = useState([
     {
       name: 'Sarah Thompson',
@@ -48,22 +52,12 @@ const Reviews = () => {
           {data.map((element) => (
             <ReviewsCard data={element} />
           ))}
+          <Pagination />
         </div>
-        {dataMessage > 3 && (
-          <div className="w-full h-fit flex flex-col items-center justify-center my-[30px]">
-            <button
-              className="bg-[#f8b600f5] p-[20px] border-2 border-[#f8b600f5] 
-            px-[50px] rounded-[5px] text-[#0E0E0E] font-bold cursor-pointer 
-            hover:bg-[#0E0E0E] hover:text-[#EAEAEA] transition-all duration-[0.7s]"
-            >
-              View All
-            </button>
-          </div>
-        )}
       </section>
     );
   }
   return <DataNotFound title={title} message={'No Testimonials Found'} />;
 };
 
-export default Reviews;
+export default AllTestimonials;

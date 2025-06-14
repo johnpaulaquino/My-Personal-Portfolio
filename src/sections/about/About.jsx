@@ -41,39 +41,43 @@ import { Link as LinkRouter } from 'react-router-dom';
 
 const About = () => {
   return (
-    <div className=" max-w-[1500px] mx-auto ">
-      <section className="mx-[90px] my-[50px]">
-        <h1 className="text-[#F8B500] text-[3rem] font-[600]">About Me</h1>
+    <section className="mx-[90px] my-[50px]">
+      <h1 className="text-[#F8B500] text-[3rem] font-[600]">About Me</h1>
 
-        <section className="grid grid-cols-4 md:grid-cols-1 gap-10 mt-[25px]">
-          <div className="col-span-3 col-start-1">
-            <h1
-              className="text-justify text-[1.5rem] font-[600]
-                         first-letter:text-9xl first-letter:float-left"
-            >
-              Hello, I'm John Paul C. Aquino. I'm currently 3rd year student at Laguna University,
+      <section className="grid grid-cols-4 md:grid-cols-1 gap-10 mt-[25px]">
+        <div className="col-span-3 col-start-1">
+          <h1
+            className="text-justify text-[1.5rem] font-[600]
+                         first-letter:text-9xl first-letter:float-left "
+          >
+            <span className="text-[#f8b600f5]">H</span>
+            <span className="text-[#B0B0B0]">
+              ello , I'm John Paul C. Aquino. I'm currently 3rd year student at Laguna University,
               who are taking Bachelor Of Science in Computer Science With Specialization in Data
               Science, a passionate developer with an experience in building Desktop Application,
               Web Application, API's and Machine Learning.
-            </h1>
-          </div>
-          <section className=" flex flex-col items-center justify-end col-span-1 col-start-4 ">
-            <LinkRouter to={'/about/read-more'}>
-              <button
-                className="group flex justify-evenly items-center w-[220px] bg-[#2E2E2E] h-[50px] border-[#2E2E2E] border-2  transition-all duration-[0.7s]
+            </span>
+          </h1>
+        </div>
+        <section className=" flex flex-col items-center justify-end col-span-1 col-start-4 ">
+          <LinkRouter to={'/about/read-more'}>
+            <button
+              className="group flex justify-evenly items-center w-[220px] bg-[#2E2E2E] h-[50px] border-[#2E2E2E] border-2  transition-all duration-[0.7s]
                         hover:bg-[#0E0E0E] cursor-pointer rounded-[5px]"
-              >
-                {''}
-                Read More
-                <span className="">
-                  <BiRightArrowAlt className="text-[30px] transition-all duration-[0.7s] group-hover:text-[#f8b600f5]" />
-                </span>
-              </button>
-            </LinkRouter>
-          </section>
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            >
+              {''}
+              Read More
+              <span className="">
+                <BiRightArrowAlt className="text-[30px] transition-all duration-[0.7s] group-hover:text-[#f8b600f5]" />
+              </span>
+            </button>
+          </LinkRouter>
         </section>
       </section>
-    </div>
+    </section>
   );
 };
 

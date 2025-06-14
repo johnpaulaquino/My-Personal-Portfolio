@@ -1,9 +1,8 @@
-import DataNotFound from '../../components/data_not_found/DataNotFound';
-import Cards from '../../components/cards/ProjectCard';
 import { useEffect, useState } from 'react';
-import { Link as LinkRouter } from 'react-router-dom';
+import Cards from '../../../components/cards/ProjectCard';
+import Pagination from '../../../components/pagination/Pagination';
 
-const FeaturedProjects = () => {
+const AllProjects = () => {
   const [cardData] = useState([
     {
       id: 1,
@@ -66,38 +65,18 @@ const FeaturedProjects = () => {
       lastUpdated: '2024-06-05',
     },
   ]);
-  const [title] = useState('Featured Projects');
-  if (cardData.length === 0) {
-    return <DataNotFound message={'No Projects Found'} title={title} />;
-  }
-  //Return data not found components if no data retrieved.
+  const [title] = useState('Projects');
   return (
     <section className=" mx-[90px] ">
       <h1 className="text-[#F8B500] text-[3rem] font-[600] my-[30px]">{title}</h1>
-      <section className="flex flex-wrap justify-between gap-[30px] sm:justify-center md:justify-center w-full transition-all duration-700">
+      <section className="flex flex-wrap justify-between  sm:justify-between md:justify-center gap-[30px] w-full transition-all duration-700 mb-[30px]">
         {cardData.map((card, index) => (
           <Cards key={index} data={card} />
         ))}
-
-        <div className="w-full h-fit flex flex-col items-center justify-center">
-          <LinkRouter to="projects/all">
-            <button
-              className="bg-[#f8b600f5] p-[20px] border-2 border-[#f8b600f5] 
-            px-[50px] rounded-[5px] text-[#0E0E0E] font-bold cursor-pointer 
-            hover:bg-[#0E0E0E] hover:text-[#EAEAEA] transition-all duration-[0.7s]"
-              onClick={() => {
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth',
-                });
-              }}
-            >
-              See All Works
-            </button>
-          </LinkRouter>
-        </div>
       </section>
+      <Pagination />
     </section>
   );
 };
-export default FeaturedProjects;
+
+export default AllProjects;
