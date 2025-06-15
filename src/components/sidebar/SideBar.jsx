@@ -2,30 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { ImCross } from 'react-icons/im';
 import { useRef } from 'react';
-const SideBar = ({ isTrue, setIsTrue }) => {
-  const [links] = useState([
-    {
-      destination: 'hero',
-      destinationText: 'Home',
-    },
-    {
-      destination: 'about',
-      destinationText: 'About Me',
-    },
-    {
-      destination: 'feat_proj',
-      destinationText: 'Featured Projects',
-    },
-
-    {
-      destination: 'certificates',
-      destinationText: 'Certificates',
-    },
-    {
-      destination: 'testimonials',
-      destinationText: 'Testimonials',
-    },
-  ]);
+const SideBar = ({ links, isTrue, setIsTrue }) => {
   return (
     <>
       {isTrue && (
@@ -39,7 +16,7 @@ const SideBar = ({ isTrue, setIsTrue }) => {
                 }}
               ></ImCross>
               {links.map((element) => (
-                <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
+                <li className={`hover:text-[#f8b600f5] transition-all duration-[0.5s]`}>
                   <ScrollLink
                     className="cursor-pointer"
                     to={element.destination}

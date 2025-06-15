@@ -6,7 +6,7 @@ const Education = () => {
       id: 1,
       school: 'Laguna University',
       degree: 'Bachelor of Science in Computer Science',
-      specialization: 'Data Science',
+      field: 'Data Science',
       startYear: 2021,
       endYear: 'present',
       location: 'Laguna Sports Complex, Bubukal, Santa Cruz, 4009 Laguna, Philippines',
@@ -52,7 +52,7 @@ const Education = () => {
         {education.map((element) => (
           <div
             key={element.id}
-            className="w-[750px] z-10 bg-[#0E0E0E] border-4 border-[#2e2e2e49] rounded-[15px] h-[350px] overflow-hidden"
+            className="w-[750px] z-10 bg-[#0E0E0E] border-4 border-[#2e2e2e49] rounded-[15px] h-[400px] overflow-hidden"
           >
             <div className=" flex flex-col gap-[10px]  p-[40px] h-full overflow-y-auto scrollbar-custom">
               <h1 className="text-[1.8rem] text-[#F8B500] font-[600]">{element.school}</h1>
@@ -60,7 +60,7 @@ const Education = () => {
                 <p className="text-[1.4rem] font-[600] ">{element.degree}</p>
               </div>
               <div>
-                <p className="text-[1.3rem] text-[#B0B0B0]">{element.field}</p>
+                <p className="text-[1.3rem] text-[#EAEAEA]">{element.field}</p>
               </div>
               <div>
                 <p className="text-[1.3rem] text-[#B0B0B0]">{element.location}</p>

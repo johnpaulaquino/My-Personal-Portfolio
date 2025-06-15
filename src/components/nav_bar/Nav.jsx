@@ -1,21 +1,17 @@
 import { Link as ScrollLink, scroller } from 'react-scroll';
 import { Link as LinkRouter } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import SideBar from '../sidebar/SideBar';
 
 const NavBar = ({ links = [] }) => {
   const [getSidebar, setSideBar] = useState(false);
 
-  let makeTrue;
-  useEffect(() => {
-    setSideBar(getSidebar);
-  }),
-    [getSidebar];
+  const [menu, setMenu] = useState('home');
 
   return (
     <>
-      <SideBar isTrue={getSidebar} setIsTrue={setSideBar} />
+      <SideBar isTrue={getSidebar} setIsTrue={setSideBar} links={links} />
       <header className="sticky top-0 z-[100] max-w-[1500px] mx-auto backdrop-blur-[3px] scroll-pb-[1200px]">
         <div
           className="flex items-center justify-between mx-[90px] my-[30px] 
@@ -37,7 +33,7 @@ const NavBar = ({ links = [] }) => {
 
           <ul className="flex gap-10 text-[#B0B0B0] max-xl:hidden ">
             {links.map((element) => (
-              <li className="hover:text-[#f8b600f5] transition-all duration-[0.5s]">
+              <li className={`hover:text-[#f8b600f5] transition-all duration-[0.5s]`}>
                 <ScrollLink
                   className="cursor-pointer"
                   to={element.destination}

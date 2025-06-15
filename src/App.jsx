@@ -8,18 +8,24 @@ import TechStack from './sections/tech_stack/TechStack.jsx';
 import GetInTouch from './sections/get_in_touch/GetInTouch.jsx';
 import Section from './components/section/Section.jsx';
 import Footer from './footer/Footer.jsx';
-import HomePage from './pages/HomePage.jsx';
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const App = () => {
+  const location = useLocation();
   return (
     <>
-      <Outlet />
-      <Section id="getintouch" content={<GetInTouch />} />
-      <footer>
-        <Footer />
-      </footer>
+      <AnimatePresence mode="sync">
+        <motion.div key={location.pathname}>
+          <Outlet />
+          <Section id="getintouch" content={<GetInTouch />} />
+          <footer>
+            <Footer />
+          </footer>
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 };
