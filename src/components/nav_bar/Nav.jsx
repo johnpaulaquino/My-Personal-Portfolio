@@ -50,6 +50,8 @@ const NavBar = () => {
       setNavLinks(homeLinks);
     } else if (location.pathname === '/about/read-more') {
       setNavLinks(aboutLinks);
+    } else {
+      setNavLinks([]);
     }
   }, [location.pathname]);
   return (
