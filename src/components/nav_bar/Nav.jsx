@@ -46,10 +46,10 @@ const NavBar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname !== '/') {
-      setNavLinks(aboutLinks);
-    } else {
+    if (location.pathname === '/') {
       setNavLinks(homeLinks);
+    } else if (location.pathname === '/about/read-more') {
+      setNavLinks(aboutLinks);
     }
   }, [location.pathname]);
   return (

@@ -1,7 +1,7 @@
 const AboutMore = () => {
   return (
     <>
-      <section className="mx-[90px] my-[50px]">
+      <div className="mx-[90px] my-[50px]">
         <h1 className="text-[#F8B500] text-[3rem] font-[600]">About Me</h1>
 
         <section className="mt-[25px]">
@@ -30,7 +30,7 @@ const AboutMore = () => {
             </h1>
           </div>
         </section>
-      </section>
+      </div>
     </>
   );
 };

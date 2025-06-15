@@ -67,7 +67,7 @@ const AllProjects = () => {
   ]);
   const [title] = useState('Projects');
   return (
-    <section className=" mx-[90px] ">
+    <div className=" mx-[90px] ">
       <h1 className="text-[#F8B500] text-[3rem] font-[600] my-[30px]">{title}</h1>
       <section className="flex flex-wrap justify-between  sm:justify-between md:justify-center gap-[30px] w-full transition-all duration-700 mb-[30px]">
         {cardData.map((card, index) => (
@@ -75,7 +75,7 @@ const AllProjects = () => {
         ))}
       </section>
       <Pagination />
-    </section>
+    </div>
   );
 };
 

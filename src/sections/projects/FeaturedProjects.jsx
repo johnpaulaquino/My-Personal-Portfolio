@@ -72,7 +72,7 @@ const FeaturedProjects = () => {
   }
   //Return data not found components if no data retrieved.
   return (
-    <section className=" mx-[90px] ">
+    <div className=" mx-[90px] ">
       <h1 className="text-[#F8B500] text-[3rem] font-[600] my-[30px]">{title}</h1>
       <section className="flex flex-wrap justify-between gap-[30px] sm:justify-center md:justify-center w-full transition-all duration-700">
         {cardData.map((card, index) => (
@@ -97,7 +97,7 @@ const FeaturedProjects = () => {
           </LinkRouter>
         </div>
       </section>
-    </section>
+    </div>
   );
 };
 export default FeaturedProjects;

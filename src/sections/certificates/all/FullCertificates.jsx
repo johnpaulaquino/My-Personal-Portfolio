@@ -47,7 +47,7 @@ const MyCertificates = () => {
 
   if (getCertificate.length > 0)
     return (
-      <section className="mx-[90px] my-[30px] h-auto">
+      <div className="mx-[90px] my-[30px] h-auto">
         <h1 className="text-[#F8B500] text-[3rem] font-[600] my-[30px]">{sectionTitle}</h1>
         <div className="my-[30px]">
           {getCertificate.map((element) => (
@@ -55,7 +55,7 @@ const MyCertificates = () => {
           ))}
           <Pagination />
         </div>
-      </section>
+      </div>
     );
 
   return <DataNotFound title={sectionTitle} message={'No Certificates'} />;

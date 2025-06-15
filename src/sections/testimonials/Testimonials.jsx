@@ -47,7 +47,7 @@ const Testimonials = () => {
 
   if (dataMessage > 1) {
     return (
-      <section className="mx-[90px]">
+      <div className="mx-[90px]">
         <h1 className="text-[#F8B500] text-[3rem] font-[600] my-[30px]">{title}</h1>
         <div className=" flex justify-center gap-[50px] flex-wrap">
           {data.map((element) => (
@@ -73,7 +73,7 @@ const Testimonials = () => {
             </LinkRouter>
           </div>
         )}
-      </section>
+      </div>
     );
   }
   return <DataNotFound title={title} message={'No Testimonials Found'} />;

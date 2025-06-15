@@ -3,7 +3,7 @@ import { Link as LinkRouter } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section className=" mx-[90px] h-full grid grid-cols-5">
+    <div className=" mx-[90px] h-full grid grid-cols-5">
       <div className="col-span-3 start-0 end-3.5 flex-col mt-[50px] max-xl:col-span-full max-xl:justify-center ">
         <div
           className="flex items-center relative justify-center
@@ -62,7 +62,7 @@ const Hero = () => {
           style={{ backgroundImage: `url(${ProfilePic})` }}
         ></div>
       </section>
-    </section>
+    </div>
   );
 };
 

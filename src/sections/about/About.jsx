@@ -41,7 +41,7 @@ import { Link as LinkRouter } from 'react-router-dom';
 
 const About = () => {
   return (
-    <section className="mx-[90px] my-[50px]">
+    <div className="mx-[90px] my-[50px]">
       <h1 className="text-[#F8B500] text-[3rem] font-[600]">About Me</h1>
 
       <section className="grid grid-cols-4 md:grid-cols-1 gap-10 mt-[25px]">
@@ -77,7 +77,7 @@ const About = () => {
           </LinkRouter>
         </section>
       </section>
-    </section>
+    </div>
   );
 };
 

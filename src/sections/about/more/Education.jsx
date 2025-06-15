@@ -31,16 +31,9 @@ const Education = () => {
     },
   ]);
 
-  const [lines, setLines] = useState(0);
-
-  useEffect(() => {
-    setLines(education.length - 1);
-  }),
-    [education.length];
-
   return (
     <>
-      <section className="mx-[90px] my-[50px] relative z-10">
+      <div className="mx-[90px] my-[50px] relative z-10">
         <div>
           <h1 className="text-[#F8B500] text-[3rem] font-[600] ">Education</h1>
         </div>
@@ -75,7 +68,7 @@ const Education = () => {
             </div>
           ))}
         </div>
-      </section>
+      </div>
     </>
   );
 };

@@ -13,7 +13,7 @@ const TechStack = () => {
   ]);
   return (
 
-      <section className="mx-[90px] p-[30px">
+      <div className="mx-[90px] p-[30px">
         <h1 className="text-[#F8B500] text-[3rem] font-[600] my-[30px]">Tools I Work With</h1>
 
         <div className="flex justify-center items-center  gap-[30px] flex-wrap">
@@ -38,7 +38,7 @@ const TechStack = () => {
             </div>
           ))}
         </div>
-      </section>
+      </div>
   );
 };
 export default TechStack;

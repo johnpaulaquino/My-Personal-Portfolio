@@ -12,7 +12,8 @@ const AboutPage = () => {
         animate={{ opacity: 1, width: '100%', transition: { duration: 0.3 } }}
         exit={{ opacity: 1, width: window.innerWidth, transition: { duration: 0.3 } }}
       >
-        <NavBar />
+       
+
         <Section id={'about-more'} content={<AboutMore />} />
         <Section id={'education'} content={<Education />} />
       </motion.div>

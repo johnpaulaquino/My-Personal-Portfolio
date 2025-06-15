@@ -1,6 +1,6 @@
 const GetInTouch = () => {
   return (
-    <section className="mx-[90px] h-[750px]">
+    <div className="mx-[90px] h-[750px]">
       <h1 className=" text-[#F8B500] text-[3rem] font-[600] my-[30px]">Get In Touch</h1>
 
       <form method="post" id="contact_form" className="w-full flex flex-wrap gap-[20px] flex-col">
@@ -49,7 +49,7 @@ const GetInTouch = () => {
           </button>
         </div>
       </form>
-    </section>
+    </div>
   );
 };
 export default GetInTouch;

@@ -10,23 +10,19 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const HomePage = () => {
-  
   return (
-    <>
-      <motion.div
-       initial={{ opacity: 0, width: 0, transition: { duration: 0.3 } }}
-        animate={{ opacity: 1, width: '100%', transition: { duration: 0.3 } }}
-        exit={{ opacity: 1, width: window.innerWidth, transition: { duration: 0.3 } }}
-      >
-        <NavBar />
-        <Section id="hero" content={<Hero />} />
-        <Section id="about" content={<About />} />
-        <Section id="feat_proj" content={<FeaturedProjects />} />
-        <Section id="tech" content={<TechStack />} />
-        <Section id="certificates" content={<MyCertificates />} />
-        <Section id="testimonials" content={<Reviews />} />
-      </motion.div>
-    </>
+    <motion.div
+      initial={{ opacity: 0, width: 0, transition: { duration: 0.3 } }}
+      animate={{ opacity: 1, width: '100%', transition: { duration: 0.3 } }}
+      exit={{ opacity: 1, width: window.innerWidth, transition: { duration: 0.3 } }}
+    >
+      <Section id="hero" content={<Hero />} />
+      <Section id="about" content={<About />} />
+      <Section id="feat_proj" content={<FeaturedProjects />} />
+      <Section id="tech" content={<TechStack />} />
+      <Section id="certificates" content={<MyCertificates />} />
+      <Section id="testimonials" content={<Reviews />} />
+    </motion.div>
   );
 };
 export default HomePage;
