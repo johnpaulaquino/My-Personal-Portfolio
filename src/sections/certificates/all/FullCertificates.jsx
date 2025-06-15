@@ -44,7 +44,6 @@ const MyCertificates = () => {
     },
   ]);
   const [sectionTitle] = useState('My Certificates');
-  const totalData = getCertificate.length;
 
   if (getCertificate.length > 0)
     return (

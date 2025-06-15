@@ -1,4 +1,4 @@
-import Section from '../components/section/Section';
+import Section from '../components/section/Section.jsx';
 import Hero from '../sections/hero/Hero.jsx';
 import About from '../sections/about/About.jsx';
 import FeaturedProjects from '../sections/projects/FeaturedProjects.jsx';

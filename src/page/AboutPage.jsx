@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
 import NavBar from '../components/nav_bar/Nav';
+import Education from '../sections/about/more/Education';
 import AboutMore from '../sections/about/more/AboutMore';
-import Education from '../sections/about/education/Education';
 import Section from '../components/section/Section';
 import { motion } from 'framer-motion';
 
