@@ -9,40 +9,16 @@ import NavBar from '../components/nav_bar/Nav.jsx';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-
-
 const HomePage = () => {
-  const [links] = useState([
-    {
-      destination: 'hero',
-      destinationText: 'Home',
-    },
-    {
-      destination: 'about',
-      destinationText: 'About Me',
-    },
-    {
-      destination: 'feat_proj',
-      destinationText: 'Featured Projects',
-    },
-
-    {
-      destination: 'certificates',
-      destinationText: 'Certificates',
-    },
-    {
-      destination: 'testimonials',
-      destinationText: 'Testimonials',
-    },
-  ]);
+  
   return (
     <>
       <motion.div
-        initial={{ opacity: 0, width: 0, transition: { duration: 2 } }}
-        animate={{ opacity: 1, width: '100%', transition: { duration: 2 } }}
-        exit={{ opacity: 1, width: window.innerWidth, transition: { duration: 2 } }}
+       initial={{ opacity: 0, width: 0, transition: { duration: 0.3 } }}
+        animate={{ opacity: 1, width: '100%', transition: { duration: 0.3 } }}
+        exit={{ opacity: 1, width: window.innerWidth, transition: { duration: 0.3 } }}
       >
-        <NavBar links={links} />
+        <NavBar />
         <Section id="hero" content={<Hero />} />
         <Section id="about" content={<About />} />
         <Section id="feat_proj" content={<FeaturedProjects />} />

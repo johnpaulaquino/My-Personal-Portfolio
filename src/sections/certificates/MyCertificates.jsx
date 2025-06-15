@@ -67,7 +67,7 @@ const MyCertificates = () => {
                 onClick={() => {
                   window.scrollTo({
                     top: 0,
-                    behavior: 'smooth',
+                    behavior: 'instant',
                   });
                 }}
               >

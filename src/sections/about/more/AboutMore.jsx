@@ -15,15 +15,16 @@ const AboutMore = () => {
               who are taking Bachelor Of Science in Computer Science With Specialization in Data
               Science, a passionate developer with an experience in building Desktop Application,
               Web Application, API's and Machine Learning. The path I want to pursue are, creating
-              API's and creating an AI, because both are interesting for me. Back then in my Senior
-              High School, the language I used are Java and SQLite. These Language I used to build
-              our capstone project, called Chai Bucks Billing System. I am the main Developer of our
-              Capstone Project and some of my members are focused on the paper. Luckily, we defended
-              our capstone project and advanced to a new chapter, which is the College, but after I
-              finished my SHS, I starting to work at factory in EPSON, and those 6 months I stopped
-              studying, even coding in an hour, I didn't do, and after the school year, I enrolled
-              again in Laguna University and luckily I survived those 2 years in college and I have
-              remaining 2 years to finished this and hoping that I will finish my college.
+              API's and creating AI, because both are interesting for me. Back then in my Senior
+              High School, the language I used are Java and SQL. These are the languages I used to
+              build our capstone project and it's called Chai Bucks Billing System. I am the main
+              Developer of our Capstone Project and some of my members are focused on the paper.
+              Luckily, we defended our capstone project and advanced to a new chapter, which is the
+              College, but after I finished my SHS, I starting to work at factory in EPSON, and
+              those 6 months I stopped studying, even coding in an hour, I didn't do, and after the
+              school year, I enrolled again in Laguna University and luckily I survived those 2
+              years in college and I have remaining 2 years to finished this and hoping that I will
+              finish my college.
             </span>
           </h1>
         </div>

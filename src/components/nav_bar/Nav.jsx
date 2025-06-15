@@ -1,17 +1,66 @@
 import { Link as ScrollLink, scroller } from 'react-scroll';
-import { Link as LinkRouter } from 'react-router-dom';
+import { Link as LinkRouter, useLocation } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import SideBar from '../sidebar/SideBar';
 
-const NavBar = ({ links = [] }) => {
+const NavBar = () => {
+  const [navLinks, setNavLinks] = useState([]);
+  const [activeSection, setActiveSection] = useState('');
   const [getSidebar, setSideBar] = useState(false);
 
-  const [menu, setMenu] = useState('home');
+  const aboutLinks = [
+    {
+      destination: 'about-more',
+      destinationText: 'About Me',
+    },
+    {
+      destination: 'education',
+      destinationText: 'Education',
+    },
+  ];
+  const homeLinks = [
+    {
+      destination: 'hero',
+      destinationText: 'Home',
+    },
+    {
+      destination: 'about',
+      destinationText: 'About Me',
+    },
+    {
+      destination: 'feat_proj',
+      destinationText: 'Featured Projects',
+    },
 
+    {
+      destination: 'certificates',
+      destinationText: 'Certificates',
+    },
+    {
+      destination: 'testimonials',
+      destinationText: 'Testimonials',
+    },
+  ];
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      setNavLinks(aboutLinks);
+    } else {
+      setNavLinks(homeLinks);
+    }
+  }, [location.pathname]);
   return (
     <>
-      <SideBar isTrue={getSidebar} setIsTrue={setSideBar} links={links} />
+      <SideBar
+        isTrue={getSidebar}
+        setIsTrue={setSideBar}
+        links={navLinks}
+        setLinks={setActiveSection}
+        link={activeSection}
+      />
       <header className="sticky top-0 z-[100] max-w-[1500px] mx-auto backdrop-blur-[3px] scroll-pb-[1200px]">
         <div
           className="flex items-center justify-between mx-[90px] my-[30px] 
@@ -32,16 +81,21 @@ const NavBar = ({ links = [] }) => {
           </h1>
 
           <ul className="flex gap-10 text-[#B0B0B0] max-xl:hidden ">
-            {links.map((element) => (
-              <li className={`hover:text-[#f8b600f5] transition-all duration-[0.5s]`}>
+            {navLinks.map((element) => (
+              <li
+                key={element.destination}
+                className={`hover:text-[#f8b600f5] ${activeSection === element.destination ? 'text-[#f8b600f5] font-bold transition-all duration-[0.7s]' : ''} transition-all duration-[0.5s]`}
+              >
                 <ScrollLink
                   className="cursor-pointer"
                   to={element.destination}
-                  offset={-85}
+                  offset={-80}
                   smooth={'easeInQuad'}
                   duration={120}
                   spy={true}
-                  activeClass="text-[#f8b600f5] font-bold transition-all duration-[0.7s]"
+                  onSetActive={() => {
+                    setActiveSection(element.destination);
+                  }}
                 >
                   {element.destinationText}
                 </ScrollLink>

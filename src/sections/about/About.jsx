@@ -65,7 +65,7 @@ const About = () => {
               className="group flex justify-evenly items-center w-[220px] bg-[#2E2E2E] h-[50px] border-[#2E2E2E] border-2  transition-all duration-[0.7s]
                         hover:bg-[#0E0E0E] cursor-pointer rounded-[5px]"
               onClick={() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.scrollTo({ top: 0, behavior: 'instant' });
               }}
             >
               {''}

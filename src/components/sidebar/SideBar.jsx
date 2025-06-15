@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { ImCross } from 'react-icons/im';
 import { useRef } from 'react';
-const SideBar = ({ links, isTrue, setIsTrue }) => {
+const SideBar = ({ links, isTrue, setIsTrue, setLinks, link }) => {
   return (
     <>
       {isTrue && (
@@ -15,8 +15,11 @@ const SideBar = ({ links, isTrue, setIsTrue }) => {
                   setIsTrue(false);
                 }}
               ></ImCross>
+
               {links.map((element) => (
-                <li className={`hover:text-[#f8b600f5] transition-all duration-[0.5s]`}>
+                <li
+                  className={`hover:text-[#f8b600f5] ${link === element.destination ? 'text-[#f8b600f5] font-bold transition-all duration-[0.7s]' : ''} transition-all duration-[0.5s]`}
+                >
                   <ScrollLink
                     className="cursor-pointer"
                     to={element.destination}
@@ -24,7 +27,12 @@ const SideBar = ({ links, isTrue, setIsTrue }) => {
                     smooth={'easeInQuad'}
                     duration={120}
                     spy={true}
-                    activeClass="text-[#f8b600f5] font-bold transition-all duration-[0.7s]"
+                    onSetActive={() => {
+                      setLinks(element.destination);
+                    }}
+                    onSetInactive={() => {
+                      setLinks(link);
+                    }}
                   >
                     {element.destinationText}
                   </ScrollLink>
@@ -39,7 +47,6 @@ const SideBar = ({ links, isTrue, setIsTrue }) => {
                 smooth={'easeInQuad'}
                 duration={120}
                 spy={true}
-                activeClass="text-[#f8b600f5] font-bold transition-all duration-[0.7s] "
               >
                 <div
                   className="flex items-center justify-center bg-[#f8b600f5] w-[150px] h-[55px]

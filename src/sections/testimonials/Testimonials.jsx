@@ -6,6 +6,7 @@ const Testimonials = () => {
   const [title] = useState('Testimonials');
   const [data] = useState([
     {
+      id: 1,
       name: 'Sarah Thompson',
       title: 'Project Manager',
       company: 'TechNova Solutions',
@@ -14,6 +15,7 @@ const Testimonials = () => {
       avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
     },
     {
+      id: 2,
       name: 'James Parker',
       title: 'CTO',
       company: 'BrightEdge Inc.',
@@ -22,6 +24,7 @@ const Testimonials = () => {
       avatar: 'https://randomuser.me/api/portraits/men/46.jpg',
     },
     {
+      id: 3,
       name: 'Emily Chen',
       title: 'UX Designer',
       company: 'PixelCraft Studio',
@@ -30,6 +33,7 @@ const Testimonials = () => {
       avatar: 'https://randomuser.me/api/portraits/women/65.jpg',
     },
     {
+      id: 4,
       name: 'Michael Rivera',
       title: 'Founder & CEO',
       company: 'GrowWithMike',
@@ -47,7 +51,7 @@ const Testimonials = () => {
         <h1 className="text-[#F8B500] text-[3rem] font-[600] my-[30px]">{title}</h1>
         <div className=" flex justify-center gap-[50px] flex-wrap">
           {data.map((element) => (
-            <ReviewsCard data={element} />
+            <ReviewsCard key={element.id} data={element} />
           ))}
         </div>
         {dataMessage > 3 && (
