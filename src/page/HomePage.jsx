@@ -16,7 +16,7 @@ const HomePage = () => {
       animate={{ opacity: 1, width: '100%', transition: { duration: 0.3 } }}
       exit={{ opacity: 1, width: window.innerWidth, transition: { duration: 0.3 } }}
     >
-      <Section id="hero" content={<Hero />} />
+      <Section id="home" content={<Hero />} />
       <Section id="about" content={<About />} />
       <Section id="feat_proj" content={<FeaturedProjects />} />
       <Section id="tech" content={<TechStack />} />

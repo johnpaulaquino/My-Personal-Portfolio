@@ -21,7 +21,7 @@ const NavBar = () => {
   ];
   const homeLinks = [
     {
-      destination: 'hero',
+      destination: 'home',
       destinationText: 'Home',
     },
     {
@@ -63,10 +63,14 @@ const NavBar = () => {
         setLinks={setActiveSection}
         link={activeSection}
       />
-      <header className="sticky top-0 z-[100] max-w-[1500px] mx-auto backdrop-blur-[3px] scroll-pb-[1200px]">
+      <header
+        className="sticky top-0 z-[100] mx-auto backdrop-blur-[3px] 
+      max-w-[1500px] max-sm:max-w-[550px] max-sm:min-w-[250px] max-sm:mx-[30px]"
+      >
         <div
-          className="flex items-center justify-between mx-[90px] my-[30px] 
-      bg-[#2E2E2E] p-[15px] rounded-[10px] relative"
+          className="flex items-center justify-between mx-[90px]  my-[30px] 
+      bg-[#2E2E2E] p-[15px] rounded-[10px] relative 
+      max-sm:mx-[0] max-sm:p-[10px]"
         >
           <h1
             className="text-[2.5rem]"
@@ -77,7 +81,7 @@ const NavBar = () => {
               });
             }}
           >
-            <LinkRouter to={'/'} className="text-[#f8b600f5] cursor-pointer">
+            <LinkRouter to={'/'} className="text-[#f8b600f5] cursor-pointer max-sm:text-[1.2rem]">
               Pa<span className="text-[#EAEAEA]">ul</span>
             </LinkRouter>
           </h1>
@@ -108,7 +112,7 @@ const NavBar = () => {
           {/* if the screen size is in 75% */}
           <span
             className="absolute right-0 m-[30px] text-[3rem]
-         hidden max-xl:block cursor-pointer"
+         hidden max-xl:block cursor-pointer max-sm:text-[1.5rem]"
             onClick={() => {
               setSideBar(true);
             }}
