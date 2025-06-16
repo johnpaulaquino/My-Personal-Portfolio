@@ -7,14 +7,16 @@ const Cards = ({ data }) => {
   return (
     // Main card wrapper
     <section // Changed from 'element' to 'data'
-      className="flex flex-col w-[550px] h-fit bg-[#2e2e2e49] rounded-[15px] border-2 border-[#2E2E2E]"
+      className="flex flex-col w-[550px] h-fit bg-[#2e2e2e49] 
+      rounded-[15px] border-2 border-[#2E2E2E]
+      max-sm:w-[350px]"
     >
       {/* Image preview area */}
       <div
         className="relative flex items-center justify-center w-full h-[350px] 
         overflow-hidden group cursor-pointer rounded-tr-[10px] 
           rounded-tl-[10px]
-      max-sm:h-[180px]"
+      max-sm:h-[180px] "
       >
         <div
           className="absolute inset-0 bg-cover bg-center

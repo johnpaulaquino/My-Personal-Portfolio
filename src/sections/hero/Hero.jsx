@@ -5,9 +5,12 @@ const Hero = () => {
   return (
     <div
       className=" mx-[90px] h-full grid grid-cols-5 
-    max-sm:mx-[30px]"
+        max-sm:mx-[30px]"
     >
-      <div className="col-span-5 start-0 mt-[30px] ">
+      <div
+        className="col-span-3 start-0 mt-[30px] 
+      max-sm:col-span-5 max-lg:col-span-5"
+      >
         <div
           className="flex items-center relative justify-center
                          border-[#2e2e2e] border-2 bg-[#2e2e2e42] w-[250px] 
@@ -15,7 +18,7 @@ const Hero = () => {
         >
           <div className="w-[15px] h-[15px] bg-[#3EBE5E] absolute rounded-full left-4 animate-ping"></div>
           <div className="w-[15px] h-[15px] bg-[#3EBE5E] absolute rounded-full left-4 "></div>
-          <p className="text-[1rem]">Available for Work</p>
+          <p className="text-[1rem]">Available for Works</p>
         </div>
 
         <section className="my-[30px]">

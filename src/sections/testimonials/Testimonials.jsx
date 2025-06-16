@@ -54,7 +54,10 @@ const Testimonials = () => {
         >
           {title}
         </h1>
-        <div className=" flex justify-center gap-[50px] flex-wrap">
+        <div
+          className=" flex justify-center gap-[50px] flex-wrap
+        max-sm:justify-center"
+        >
           {data.map((element) => (
             <ReviewsCard key={element.id} data={element} />
           ))}

@@ -82,7 +82,10 @@ const FeaturedProjects = () => {
       >
         {title}
       </h1>
-      <section className="flex flex-wrap justify-between gap-[30px] sm:justify-center md:justify-center w-full transition-all duration-700">
+      <section
+        className="flex flex-wrap justify-between gap-[30px] 
+       max-sm:justify-center"
+      >
         {cardData.map((card, index) => (
           <Cards key={index} data={card} />
         ))}
