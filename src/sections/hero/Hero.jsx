@@ -18,7 +18,7 @@ const Hero = () => {
         >
           <div className="w-[15px] h-[15px] bg-[#3EBE5E] absolute rounded-full left-4 animate-ping"></div>
           <div className="w-[15px] h-[15px] bg-[#3EBE5E] absolute rounded-full left-4 "></div>
-          <p className="text-[1rem]">Available for Works</p>
+          <p className="text-[1rem]">Available for Work</p>
         </div>
 
         <section className="my-[30px]">
