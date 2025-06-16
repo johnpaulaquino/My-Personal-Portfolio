@@ -1,0 +1,6 @@
+fastapi[standard]
+pydantic-settings
+asyncpg
+python-dotenv
+SQLAlchemy
+alembic
