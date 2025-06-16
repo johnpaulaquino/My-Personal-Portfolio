@@ -65,12 +65,14 @@ const NavBar = () => {
       />
       <header
         className="sticky top-0 z-[100] mx-auto backdrop-blur-[3px] 
-      max-w-[1500px] max-sm:max-w-[550px] max-sm:min-w-[250px] max-sm:mx-[30px]"
+      max-sm:max-w-[550px] 
+      max-sm:min-w-[250px]
+       max-sm:mx-[30px]"
       >
         <div
           className="flex items-center justify-between mx-[90px]  my-[30px] 
       bg-[#2E2E2E] p-[15px] rounded-[10px] relative 
-      max-sm:mx-[0] max-sm:p-[10px]"
+      max-sm:mx-[0] max-sm:p-[10px] "
         >
           <h1
             className="text-[2.5rem]"

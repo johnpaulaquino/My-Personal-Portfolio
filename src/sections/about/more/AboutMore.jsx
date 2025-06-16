@@ -1,14 +1,23 @@
 const AboutMore = () => {
   return (
     <>
-      <div className="mx-[90px] my-[50px]">
-        <h1 className="text-[#F8B500] text-[3rem] font-[600]">About Me</h1>
+      <div
+        className="mx-[90px] my-[50px]
+      max-sm:mx-[30px]"
+      >
+        <h1
+          className="text-[#F8B500] text-[3rem] font-[600]
+        max-sm:text-[1.5rem] "
+        >
+          About Me
+        </h1>
 
         <section className="mt-[25px]">
           <div className="col-span-3 col-start-1">
             <h1
               className="text-justify text-[1.5rem] font-[600]
-                         first-letter:text-9xl first-letter:float-left"
+                         first-letter:text-9xl first-letter:float-left
+                          max-sm:first-letter:text-6xl  max-sm:text-[0.9rem]"
             >
               <span className="text-[#f8b600f5]">H</span>
               <span className="text-[#B0B0B0]">

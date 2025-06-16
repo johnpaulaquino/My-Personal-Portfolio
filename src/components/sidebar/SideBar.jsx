@@ -6,11 +6,21 @@ const SideBar = ({ links, isTrue, setIsTrue, setLinks, link }) => {
   return (
     <>
       {isTrue && (
-        <div className="h-full w-full flex justify-end top-0 bg-[#2e2e2e49] backdrop-blur-[5px] z-[999] fixed transition-all duration-[0.7s]">
-          <div className="w-fit h-full bg-[#2E2E2E] border-l-2 border-[#b0b0b046] flex justify-end p-[30px]  transition-all duration-[0.7s]">
-            <ul className="flex flex-col gap-5 text-[#B0B0B0] ">
+        <div
+          className=" h-full w-full flex justify-end top-0 bg-[#2e2e2e49]
+           backdrop-blur-[5px] z-[999] fixed transition-all duration-[0.7s]"
+        >
+          <div
+            className="w-fit h-full bg-[#2E2E2E] border-l-2 border-[#b0b0b046] 
+          flex p-[15px] transition-all duration-[0.7s]"
+          >
+            <ul
+              className="flex flex-col text-[#B0B0B0]
+             max-sm:text-[0.3rem] max-sm:gap-[5px]"
+            >
               <ImCross
-                className="text-[2rem] cursor-pointer"
+                className="text-[2rem] cursor-pointer 
+                max-sm:text-[0.4rem] "
                 onClick={() => {
                   setIsTrue(false);
                 }}
@@ -50,14 +60,15 @@ const SideBar = ({ links, isTrue, setIsTrue, setLinks, link }) => {
               >
                 <div
                   className="flex items-center justify-center bg-[#f8b600f5] w-[150px] h-[55px]
-        rounded-[10px]"
+        rounded-[5px] max-sm:w-[45px] max-sm:h-[20px]"
                 >
                   <button
                     className="w-full h-full cursor-pointer 
           text-[#0E0E0E] text-[1.1rem] font-[500] border-[#f8b600f5] 
-          border-[2px] rounded-[5px]
+          border-1 rounded-[5px]
           hover:bg-[#2E2E2E] hover:text-[#EAEAEA] transition-all 
-          duration-[0.7s]"
+          duration-[0.7s]
+           max-sm:text-[0.3rem]  "
                   >
                     Get in touch
                   </button>

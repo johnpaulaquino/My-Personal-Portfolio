@@ -41,14 +41,29 @@ import { Link as LinkRouter } from 'react-router-dom';
 
 const About = () => {
   return (
-    <div className="mx-[90px] my-[50px]">
-      <h1 className="text-[#F8B500] text-[3rem] font-[600]">About Me</h1>
+    <div
+      className="mx-[90px] my-[30px] 
+    max-sm:mx-[30px]"
+    >
+      <h1
+        className="text-[#F8B500] text-[3rem] font-[600]
+      max-sm:text-[1.5rem]"
+      >
+        About Me
+      </h1>
 
-      <section className="grid grid-cols-4 md:grid-cols-1 gap-10 mt-[25px]">
-        <div className="col-span-3 col-start-1">
+      <section
+        className="grid grid-cols-4 md:grid-cols-1 gap-10 mt-[30px]
+      max-sm:flex max-sm:flex-col"
+      >
+        <div
+          className="col-span-3 col-start-1 
+         max-sm:items-start "
+        >
           <h1
             className="text-justify text-[1.5rem] font-[600]
-                         first-letter:text-9xl first-letter:float-left "
+                         first-letter:text-9xl first-letter:float-left 
+                         max-sm:first-letter:text-6xl  max-sm:text-[0.9rem]"
           >
             <span className="text-[#f8b600f5]">H</span>
             <span className="text-[#B0B0B0]">
@@ -59,11 +74,15 @@ const About = () => {
             </span>
           </h1>
         </div>
-        <section className=" flex flex-col items-center justify-end col-span-1 col-start-4 ">
+        <section
+          className=" flex flex-col items-center justify-end col-span-1 col-start-4 
+        max-sm:items-start max-sm:mt-[-30px]"
+        >
           <LinkRouter to={'/about/read-more'}>
             <button
               className="group flex justify-evenly items-center w-[220px] bg-[#2E2E2E] h-[50px] border-[#2E2E2E] border-2  transition-all duration-[0.7s]
-                        hover:bg-[#0E0E0E] cursor-pointer rounded-[5px]"
+                        hover:bg-[#0E0E0E] cursor-pointer rounded-[5px]
+                        max-sm:w-[120px] max-sm:h-[45px] max-sm:text-[0.8rem]"
               onClick={() => {
                 window.scrollTo({ top: 0, behavior: 'instant' });
               }}
@@ -71,7 +90,10 @@ const About = () => {
               {''}
               Read More
               <span className="">
-                <BiRightArrowAlt className="text-[30px] transition-all duration-[0.7s] group-hover:text-[#f8b600f5]" />
+                <BiRightArrowAlt
+                  className="text-[30px] transition-all duration-[0.7s] group-hover:text-[#f8b600f5]
+                max-sm:text-[1rem]"
+                />
               </span>
             </button>
           </LinkRouter>

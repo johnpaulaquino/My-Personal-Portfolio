@@ -71,20 +71,23 @@ const Hero = () => {
             <p>Building real-world solutions with a focus on AI, software design, and growth.</p>
           </div>
 
-          <div className="w-[400px] h-[65px] flex justify-between text-[1rem] font-">
+          <div
+            className="w-[400px] h-[65px] flex justify-between text-[1rem] 
+            max-sm:h-[50px] max-sm:w-[350px] "
+          >
             <button
               className="w-[170px] h-full cursor-pointer  text-[#0E0E0E] border-[#F8B500] border-2 
                               bg-[#F8B500] rounded-[5px] hover:bg-[#0E0E0E] hover:text-[#EAEAEA] transition-all duration-[0.7s]
-                              max-sm:text-[0.9rem] "
+                              max-sm:text-[0.9rem] max-sm:w-[135px]"
             >
               Download CV
             </button>
 
-            <LinkRouter to="projects">
+            <LinkRouter to="projects/all">
               <button
                 className="w-[170px] h-full cursor-pointer  border-[#2E2E2E]  bg-[#2E2E2E] rounded-[5px] border-2
                               hover:bg-[#0E0E0E]  transition-all duration-[0.7s]
-                              max-sm:text-[0.9rem]"
+                              max-sm:text-[0.9rem] max-sm:w-[135px]"
               >
                 Browse Projects
               </button>
