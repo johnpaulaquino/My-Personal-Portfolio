@@ -9,3 +9,6 @@ class Users(Base):
                       index=True,autoincrement=True)
     username : str = Column('username', String, nullable=False)
     password : str = Column('password', String, nullable = False)
+
+
+

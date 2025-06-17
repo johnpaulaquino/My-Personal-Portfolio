@@ -5,9 +5,26 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-# Inherits the Base setings
+# Inherits the Base settings
 class Settings(BaseSettings):
+    #app variables
     PORT : int
+
+    #Database variables
+    DB_URL : str
+
+    #Cloudinary variables
+    C_NAME : str
+    C_KEY : str
+    C_SECRET : str
+    C_SECURE : bool
+
+    #JWT
+    JWT_KEY : str
+    JWT_REFRESH_ACCESS_KEY : int
+    JWT_ALGORITHM : str
+
+
 
     # configuration for the settings
     class Config:

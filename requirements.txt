@@ -4,3 +4,6 @@ asyncpg
 python-dotenv
 SQLAlchemy
 alembic
+cloudinary
+passlib[argon2]
+python-jose[cryptography]

@@ -4,7 +4,6 @@ settings = Settings()
 
 class AppUtils:
 
-
     # this is the lifespan of the app
     @staticmethod
     async def app_lifespan(app):
