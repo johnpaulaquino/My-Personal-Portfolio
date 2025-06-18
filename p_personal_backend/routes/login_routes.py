@@ -16,13 +16,14 @@ login = APIRouter(
 async def login_for_access_token(form_data : OAuth2PasswordRequestForm = Depends()):
     try:
         user_cred = await UserRepositories.find_user_by_username(form_data.username)
-        user_cred = UsersOut.model_validate(user_cred)
+
         if not user_cred:
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 detail='Username not found!',
                 headers={'WWW-Authenticate': 'Bearer'}
             )
+        user_cred = UsersOut.model_validate(user_cred)
         if not AuthUtils.authenticate_user(user_cred.model_dump(), form_data.password):
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,

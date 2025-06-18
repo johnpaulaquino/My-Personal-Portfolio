@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, ForeignKey, String, Date
 from sqlalchemy.dialects.postgresql import JSONB
+from datetime import date
 
 from p_personal_backend.database.models import Base
 
@@ -11,10 +12,10 @@ class Projects(Base):
     live_url: str = Column('live_url', String, nullable=True)
     forks: int = Column('forks', Integer, nullable=True)
     stars: int = Column('stars', Integer, nullable=True)
-    status: int = Column('status', String, nullable=False) #private or public
+    status: str = Column('status', String, nullable=False) #private or public
     title: str = Column('title', String, nullable=False, index=False)
     description: str = Column('description', String, nullable=False)
-    date_update: str = Column('date_update', Date, nullable=False)
+    date_update: date = Column('date_update', Date, nullable=False)
     git_url: str = Column('git_url', String, nullable=True)
 
     # This is a JSON File and will extract this before returning in the server.
@@ -23,10 +24,11 @@ class Projects(Base):
     def __init__(self, live_url,
                  forks, stars, title,
                  description, date_update,
-                 git_url, techs, **kw):
+                 git_url, techs,status, **kw):
         super().__init__(**kw)
 
         self.live_url = live_url
+        self.status = status
         self.forks = forks
         self.stars = stars
         self.title = title

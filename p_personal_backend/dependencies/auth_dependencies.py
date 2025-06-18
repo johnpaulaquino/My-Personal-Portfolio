@@ -41,9 +41,6 @@ class AuthDependencies:
                     detail='Could not validate credentials!',
                     headers={'WWW-Authenticate': 'Bearer'}
                 )
-
-            del curr_user['password']
-
             return curr_user
         except ExpiredSignatureError:
             raise HTTPException(

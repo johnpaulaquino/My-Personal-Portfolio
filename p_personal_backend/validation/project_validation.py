@@ -1,6 +1,6 @@
 from p_personal_backend.database.models import Projects
 
-class ProjectUtils:
+class ProjectValidation:
 
     @staticmethod
     def validate_projects(projects : Projects):

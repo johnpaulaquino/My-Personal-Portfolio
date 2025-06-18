@@ -4,7 +4,7 @@ from sqlalchemy import select, and_
 from sqlalchemy.exc import SQLAlchemyError
 
 from p_personal_backend.database.engine import create_session
-from p_personal_backend.database.models import Users
+from p_personal_backend.database.models import Users, Projects
 
 
 class UserRepositories:
@@ -25,7 +25,7 @@ class UserRepositories:
                 return False
 
     @staticmethod
-    async def find_user_by_id(user_id: int):
+    async def find_user_by_id(user_id: int) -> Projects | bool:
         async with create_session() as db:
             try:
                 stmt = select(Users).where(and_(Users.id == user_id))
