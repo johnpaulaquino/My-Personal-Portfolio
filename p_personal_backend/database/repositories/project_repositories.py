@@ -1,4 +1,6 @@
 from sqlalchemy import select
+from sqlalchemy.exc import SQLAlchemyError
+
 from p_personal_backend.database.engine import create_session
 from p_personal_backend.database.models import Projects
 
@@ -64,4 +66,22 @@ class ProjectRepositories:
                 return data
             except Exception as e:
                 raise e
+
+
+
+    @staticmethod
+    async def get_projects_paginated(offset: int, limit: int):
+        try:
+            async with create_session() as db:
+                stmt = select(Projects).offset(offset).limit(limit)
+                result = await db.execute(stmt)
+                data: list = result.scalars().all()
+                return data
+        except SQLAlchemyError as e:
+            print(f'An error occurred {e}')
+            return False
+
+    @staticmethod
+    async def update_project(project):
+        pass
 

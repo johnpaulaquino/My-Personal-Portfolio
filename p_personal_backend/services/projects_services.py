@@ -7,6 +7,7 @@ from starlette.responses import JSONResponse
 
 from p_personal_backend.database.models import Projects
 from p_personal_backend.database.repositories.project_repositories import ProjectRepositories
+from p_personal_backend.schema.paginated_schema import Paginated
 from p_personal_backend.schema.projects_schema import ProjectsSchema
 from p_personal_backend.validation.project_validation import ProjectValidation
 
@@ -77,6 +78,26 @@ class ProjectServices:
                 status_code=status.HTTP_200_OK,
                 content={'status': 'ok', 'message': 'Successfully retrieved.',
                          'data': jsonable_encoder(data)}
+            )
+        except Exception as e:
+            raise e
+
+    @staticmethod
+    async def get_projects_paginated(paginated: Paginated):
+        try:
+            offset = (paginated.skip - 1) * paginated.limit
+            data = await ProjectRepositories.get_projects_paginated(offset=offset, limit=paginated.limit)
+            if not data:
+                return JSONResponse(
+                    status_code=status.HTTP_200_OK,
+                    content={'status': 'ok', 'message': 'No projects to fetch!'}
+                )
+            data = jsonable_encoder(data)
+            return JSONResponse(
+                status_code=status.HTTP_200_OK,
+                content = {'status': 'ok',
+                           'message': 'successfully retrieved!',
+                           'data' : data}
             )
         except Exception as e:
             raise e

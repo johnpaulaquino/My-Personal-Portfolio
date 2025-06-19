@@ -13,6 +13,8 @@ class Settings(BaseSettings):
     #Database variables
     DB_URL : str
 
+    ENVIRONMENT : str = 'dev'
+
     #Cloudinary variables
     C_NAME : str
     C_KEY : str
@@ -24,6 +26,9 @@ class Settings(BaseSettings):
     JWT_REFRESH_ACCESS_KEY : int
     JWT_ALGORITHM : str
 
+    #Environment.
+    # This is to set the environment of the
+
 
 
     # configuration for the settings
@@ -32,3 +37,4 @@ class Settings(BaseSettings):
             env_file='.env',
             env_file_encoding='utf-8'
         )
+        model_config = 'ignored_types'

@@ -7,15 +7,28 @@ from p_personal_backend.config.Settings import Settings
 
 settings = Settings()
 
-engine = create_async_engine(url= settings.DB_URL)
+# Replace this with your local database information
+dev_env_url = "postgresql+asyncpg://postgres:1084@localhost:5432/ppb"
+
+engine = ''
+try:
+    if settings.ENVIRONMENT == 'dev':
+        engine = create_async_engine(url=dev_env_url)
+    elif settings.ENVIRONMENT == 'prod':
+        engine = create_async_engine(url=settings.DB_URL)
+    else:
+        raise Exception('No database selected!')
+except Exception as e:
+    print(f'An error occurred: {e}')
+
+# TO create a session to connect in database
 
 
-#TO create a session to connect in database
 LocalSession = sessionmaker(
     class_=AsyncSession,
     bind=engine,
     autoflush=False,
-    expire_on_commit= False
+    expire_on_commit=False
 )
 
 

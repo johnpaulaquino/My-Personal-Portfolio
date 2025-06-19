@@ -2,6 +2,7 @@ from fastapi import APIRouter
 from fastapi.params import Depends
 
 from p_personal_backend.dependencies.auth_dependencies import AuthDependencies
+from p_personal_backend.schema.paginated_schema import Paginated
 from p_personal_backend.schema.projects_schema import ProjectsSchema
 from p_personal_backend.services.projects_services import ProjectServices
 
@@ -29,5 +30,13 @@ async def insert_project(projects: ProjectsSchema,
 async def get_all_records(curr_user : str =  Depends(AuthDependencies.get_current_user)):
     try:
         return await ProjectServices.get_all_records()
+    except Exception as e:
+        raise e
+
+@projects_router.post('/get-projects')
+async def get_projects_paginated(paginated : Paginated,
+                                 curr_user : str = Depends(AuthDependencies.get_current_user)):
+    try:
+        return await ProjectServices.get_projects_paginated(paginated)
     except Exception as e:
         raise e
