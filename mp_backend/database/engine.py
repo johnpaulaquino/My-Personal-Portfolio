@@ -50,5 +50,5 @@ async def create_session() -> AsyncSession:
         try:
             yield session
         except Exception as e:
-            print(f'An error occurred: {e}')
+            print(f'An error occurred as: {e} {e.with_traceback}')
             await session.rollback()

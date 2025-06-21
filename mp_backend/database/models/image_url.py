@@ -6,7 +6,7 @@ from mp_backend.database.models import Base
 class ImageUrl(Base):
     __tablename__ = 'img_url'
     id : int =  Column('id', Integer, primary_key=True, index =True)
-    project_id : int = Column('project_id', Integer, ForeignKey(
+    project_id : str = Column('project_id', String, ForeignKey(
         'projects.id', ondelete='Cascade'
     ), nullable= True)
 

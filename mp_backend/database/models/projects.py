@@ -7,19 +7,18 @@ from mp_backend.database.models import Base
 
 class Projects(Base):
     __tablename__ = 'projects'
-    id: int = Column('id', Integer, primary_key=True,
-                     autoincrement=True, index=True)
+    id: str = Column('id', String, primary_key=True,index=True)
     live_url: str = Column('live_url', String, nullable=True)
     forks: int = Column('forks', Integer, nullable=True)
     stars: int = Column('stars', Integer, nullable=True)
     status: str = Column('status', String, nullable=False) #private or public
     title: str = Column('title', String, nullable=False, index=False)
-    description: str = Column('description', String, nullable=False)
+    description: str = Column('description', String, nullable=True)
     date_update: date = Column('date_update', Date, nullable=False)
     git_url: str = Column('git_url', String, nullable=True)
 
     # This is a JSON File and will extract this before returning in the server.
-    tools: dict = Column('tools', JSONB, nullable=False)
+    tools: dict = Column('tools', JSONB, nullable=True)
 
     def __init__(self, live_url,
                  forks, stars, title,

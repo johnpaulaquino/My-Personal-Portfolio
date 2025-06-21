@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 
 class ToolsSchema(BaseModel):
-    technologies: list[str]
+    technologies: str
 
 
 class ProjectsInputSchema(BaseModel):
@@ -26,16 +26,17 @@ class ProjectsInputSchema(BaseModel):
 
 
 class ProjectsSchema(BaseModel):
-    id: int
-    live_url: str
+    id: str
+    live_url: str | None
     forks: int
     stars: int
     status: str
     title: str
-    description: str
+    description: str | None
     date_update: date
     git_url: str
-    tools: ToolsSchema
+    tools: List[ToolsSchema] = []
+
 
     class Config:
         from_attributes = True

@@ -8,17 +8,16 @@ from mp_backend.database.models import Projects
 class ProjectRepositories:
 
     @staticmethod
-    async def insert_project(project: Projects):
+    async def insert_projects(projects):
         """
-            This to add project information in database.
-        :param project: is an instance of Project object.
-        :return: True if no error, otherwise raise an exeption.
+        This will add batch projects in database.
+        :param projects: is an instance of Project object.
+        :return: True if no error, otherwise raise an exception.
         """
         async with create_session() as db:
             try:
-                db.add(project)
+                db.add_all(projects)
                 await db.commit()
-                await db.refresh(project)
                 return True
             except Exception as e:
                 await db.rollback()
@@ -54,7 +53,7 @@ class ProjectRepositories:
                 raise e
 
     @staticmethod
-    async def find_project_by_id(project_id: int) -> bool:
+    async def find_project_by_id(project_id: str) -> bool:
         """
         This simply check if the data is existing in db or not using id.
         :param project_id: is the keyword to find the records in database.
@@ -83,14 +82,14 @@ class ProjectRepositories:
                 raise e
 
     @staticmethod
-    async def get_ten_records():
+    async def get_four_records():
         """
         To fetch all records in projects table.
         :return:
         """
         async with create_session() as db:
             try:
-                result = await db.execute(select(Projects).limit(10))
+                result = await db.execute(select(Projects).limit(4))
                 data = result.scalars().unique().all()
                 return data
             except Exception as e:
@@ -109,7 +108,7 @@ class ProjectRepositories:
             return False
 
     @staticmethod
-    async def get_specific_project(project_id: int):
+    async def get_specific_project(project_id: str):
         async with create_session() as db:
             try:
                 result = await db.execute(select(
@@ -123,7 +122,7 @@ class ProjectRepositories:
                 raise e
 
     @staticmethod
-    async def update_project(project_id: int, projects: Projects):
+    async def update_project(project_id: str, projects: Projects):
         async with create_session() as db:
             try:
                 stmt = (update(Projects).values(
@@ -146,7 +145,7 @@ class ProjectRepositories:
                 raise e
 
     @staticmethod
-    async def delete_project(project_id: int):
+    async def delete_project(project_id: str):
         async with create_session() as db:
             try:
                 stmt = (delete(Projects)

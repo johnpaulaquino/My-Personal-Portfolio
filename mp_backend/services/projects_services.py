@@ -1,71 +1,85 @@
-import json
+from datetime import datetime
 
-from fastapi import HTTPException, status
+import requests
+from fastapi import status
 from fastapi.encoders import jsonable_encoder
-from starlette.responses import JSONResponse
 
+from mp_backend.config.Settings import Settings
 from mp_backend.database.models import Projects
 from mp_backend.database.repositories.project_repositories import ProjectRepositories
 from mp_backend.schema.paginated_schema import Paginated
 from mp_backend.schema.projects_schema import ProjectsInputSchema, ProjectsSchema, ProjectsOutSchema
 from mp_backend.utils.messaging_utils import MessagingUtils
-from mp_backend.validation.project_validation import ProjectValidation
+settings = Settings()
 
 
 class ProjectServices:
 
     @staticmethod
-    async def insert_project(projects: ProjectsInputSchema):
-        """"
-            # This service is to add the information of project in database.
-            ### :param projects: is a schema that provides a required data in the body.
-            ### :return: JSONResponse if no errors, otherwise raise an HTTPException.
-        """
+    async def insert_project(page: int = 1):
         try:
-            project = Projects(
-                live_url=projects.live_url,
-                git_url=projects.git_url,
-                description=projects.description,
-                date_update=projects.date_update,
-                forks=projects.forks,
-                stars=projects.stars,
-                tools=jsonable_encoder(projects.tools),
-                title=projects.title,
-                status=projects.status
-            )
+            headers = {
+                'Accept': 'application/vnd.github+json',
+                'Authorization': f'token {settings.GIT_TOKEN}'  # Only if using auth
+            }
+            url = f'https://api.github.com/user/repos'
+            params = {
+                'per_page': 100,
+                'page': page,
+                'sort': 'updated'
+            }
+            response = requests.get(url, headers=headers, params=params)
 
-            try:
-                # validate the data before inserting. This will throw an error if there is an error.
-                ProjectValidation.validate_projects(project)
-            except Exception as e:
-                raise HTTPException(
-                    status_code=status.HTTP_400_BAD_REQUEST,
-                    detail=f'{e}'
-                )
-
-            is_exist = await ProjectRepositories.find_project_by_title(project.title)
-
-            if is_exist:
+            if response.status_code != 200:
                 return MessagingUtils.message_response(
-                    res_status='failed',
-                    status_code=status.HTTP_400_BAD_REQUEST,
-                    message='project is already exist!',
+                    status_code=response.status_code,
+                    message=response.reason,
+                    res_status='failed'
+                )
+            repos = response.json()
+            users = settings.GIT_USERNAME.split(',') if settings.GIT_USERNAME else []
+
+            data = list(filter(lambda x: x['owner']["login"] in users, repos))
+
+            project_list = []
+            for dt in data:
+                formatted_date = datetime.strptime(dt['updated_at'], '%Y-%m-%dT%H:%M:%SZ')
+                is_exist = await ProjectRepositories.find_project_by_title(dt['name'])
+                if not is_exist:
+                    projects = Projects(
+                        id=str(dt['id']),
+                        live_url='',
+                        git_url=dt['html_url'],
+                        description=dt['description'],
+                        date_update=formatted_date.date(),
+                        forks=dt['forks_count'],
+                        stars=dt['stargazers_count'],
+                        tools=jsonable_encoder(dt['topics']),
+                        title=dt['name'],
+                        status=dt['visibility'])
+
+                    project_list.append(projects)
+            if not project_list:
+                return MessagingUtils.message_response(
+                    res_status='ok',
+                    status_code=status.HTTP_200_OK,
+                    message='All projects are already inserted!'
                 )
 
-            await ProjectRepositories.insert_project(project)
-
+            await ProjectRepositories.insert_projects(project_list)
             return MessagingUtils.message_response(
                 res_status='ok',
                 status_code=status.HTTP_200_OK,
-                message='successfully created!',
+                message='successfully created!'
             )
+
         except Exception as e:
             raise e
 
     @staticmethod
-    async def get_ten_records():
+    async def get_four_records():
         try:
-            data = await ProjectRepositories.get_ten_records()
+            data = await ProjectRepositories.get_four_records()
             if not data:
                 return MessagingUtils.message_response(
                     res_status='ok',
@@ -73,7 +87,7 @@ class ProjectServices:
                     message='no data to fetch!',
                 )
 
-            data = ProjectsOutSchema.model_validate({"Projects":data})
+            data = ProjectsOutSchema.model_validate({"Projects": data})
             data.model_dump(by_alias=True)
             return MessagingUtils.message_response(
                 res_status='ok',
@@ -106,7 +120,7 @@ class ProjectServices:
             raise e
 
     @staticmethod
-    async def get_specific_project(project_id: int):
+    async def get_specific_project(project_id: str):
         try:
             # get the data from database
             data = await ProjectRepositories.get_specific_project(project_id)
@@ -129,7 +143,7 @@ class ProjectServices:
             raise e
 
     @staticmethod
-    async def delete_project(project_id: int):
+    async def delete_project(project_id: str):
         try:
             is_exist = await ProjectRepositories.find_project_by_id(project_id)
             if not is_exist:
@@ -149,7 +163,7 @@ class ProjectServices:
             raise e
 
     @staticmethod
-    async def update_project(project_id: int, projects: ProjectsInputSchema):
+    async def update_project(project_id: str, projects: ProjectsInputSchema):
         try:
             is_exist = await ProjectRepositories.find_project_by_id(project_id)
             if not is_exist:
@@ -177,7 +191,7 @@ class ProjectServices:
                     res_status='failed',
                     message='project is already exist!'
                 )
-            await ProjectRepositories.update_project(project_id,project)
+            await ProjectRepositories.update_project(project_id, project)
             return MessagingUtils.message_response(
                 status_code=status.HTTP_200_OK,
                 res_status='ok',

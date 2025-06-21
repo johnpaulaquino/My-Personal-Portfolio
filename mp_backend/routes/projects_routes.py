@@ -16,8 +16,7 @@ projects_router = APIRouter(
 )
 
 @projects_router.post('/add')
-async def insert_project(projects: ProjectsInputSchema,
-                         ):
+async def insert_project(page: int = 1):
     """
     ## This route is to add the information of project in database.
     ### :param projects: is a schema that provides a required data in the body.
@@ -26,18 +25,19 @@ async def insert_project(projects: ProjectsInputSchema,
     """
     try:
 
-       return await ProjectServices.insert_project(projects)
+       return await ProjectServices.insert_project(page)
     except Exception as e:
+
         raise e
 
-@projects_router.get('/first-ten')
-async def get_ten_records():
+@projects_router.get('/first-four')
+async def get_four_records():
     """
     This will get the first ten records of the projects.
     :return: JSONResponse based on the services.
     """
     try:
-        return await ProjectServices.get_ten_records()
+        return await ProjectServices.get_four_records()
     except Exception as e:
         raise e
 
@@ -54,7 +54,7 @@ async def get_projects_paginated(paginated : Paginated =  Depends()):
         raise e
 
 @projects_router.get('/{project_id}')
-async def get_specific_project(project_id : int,
+async def get_specific_project(project_id : str,
                                ):
     try:
         data = await ProjectServices.get_specific_project(project_id)
@@ -63,7 +63,7 @@ async def get_specific_project(project_id : int,
         raise e
 
 @projects_router.delete("/delete/{project_id}")
-async def delete_project(project_id:int ):
+async def delete_project(project_id:str ):
     """
     ## This function is to delete the specific project based on its ID.
     ### :param project_id: is a path query, to find the specific project that is need to delete.
@@ -75,7 +75,7 @@ async def delete_project(project_id:int ):
         raise e
 
 @projects_router.patch("/update/{project_id}")
-async def update_project(project_id:int, project : ProjectsInputSchema ):
+async def update_project(project_id:str, project : ProjectsInputSchema ):
     """
     ## This function is to update the specific project based on its ID.
     ### :param project_id: is a path query, to find the specific project that is need to update.
